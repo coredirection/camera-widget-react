@@ -1,18 +1,28 @@
 ---
 name: Auto Bump Version
+
 on:
   push:
     branches: [develop]
   pull_request:
     branches: [develop]
 
+permissions:
+  contents: read
+  packages: write
+
 env:
-  GITHUB_TOKEN: ${{ secrets.GH_RO_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  
+
 jobs:
   bump:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     strategy:
       matrix: 
         node-version: [18.x]

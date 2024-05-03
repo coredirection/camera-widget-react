@@ -1,6 +1,6 @@
 {
-  "name": "@3dlook/camera",
-  "version": "2.6.0",
+  "name": "@3dlook/camera-widget-react",
+  "version": "0.0.1",
   "description": "Widget camera component",
   "engines": {
     "node": ">=12.0.0"
@@ -9,11 +9,11 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack --progress"
   },
-  "repository": "github:3dlook-me/widget-camera",
+  "repository": "github:3dlook-me/camera-widget-react",
   "author": "3DLOOK",
   "license": "ISC",
   "main": "dist/index.js",
-  "homepage": "https://github.com/3dlook-me/widget-camera/src",
+  "homepage": "https://github.com/3dlook-me/camera-widget-react/src",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
