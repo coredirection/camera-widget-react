@@ -1,3 +1,10 @@
+# 1.0.0 (2024-05-03)
+
+
+### Features
+
+* update GitHub workflow and package info ([51e9e34](https://github.com/3dlook-me/camera-widget-react/commit/51e9e34c008d8a86530c61774b37793e57f1d31e))
+
 # [2.6.0](https://github.com/3dlook-me/widget-camera/compare/v2.5.2...v2.6.0) (2024-03-05)
 
 
