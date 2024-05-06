@@ -1,4 +1,5 @@
 import {
+  // eslint-disable-next-line no-unused-vars
   h,
   render,
   Component,
@@ -82,7 +83,7 @@ import audioThirdInstructionHVS from './audio/6.5.mp3';
 import audioFourthInstructionHVS from './audio/6.6.mp3';
 import audioSuccessPhotoHVS from './audio/6.7.mp3';
 
-const AUIDO_CASES = {
+const AUDIO_CASES = {
   standPhone: [
     audioStandYourPhone,
     audioStandYourPhoneHVFS,
@@ -806,7 +807,7 @@ class Camera extends Component {
     if (onClickDone) onClickDone();
 
     this.setState({
-      activeAudioTrack: this.specifyAudioTrack(AUIDO_CASES.standPhone),
+      activeAudioTrack: this.specifyAudioTrack(AUDIO_CASES.standPhone),
     });
 
     current.load();
@@ -859,7 +860,7 @@ class Camera extends Component {
     const { current } = this.$audio;
 
     this.setState({
-      activeAudioTrack: this.specifyAudioTrack(AUIDO_CASES.successGyro),
+      activeAudioTrack: this.specifyAudioTrack(AUDIO_CASES.successGyro),
     });
 
     current.addEventListener('ended', this.playAudioInstructions, { once: true });
@@ -979,19 +980,19 @@ class Camera extends Component {
 
     switch (index) {
       case 0:
-        track = this.specifyAudioTrackFS(AUIDO_CASES.firstInstruction);
+        track = this.specifyAudioTrackFS(AUDIO_CASES.firstInstruction);
 
         break;
       case 1:
-        track = this.specifyAudioTrackFS(AUIDO_CASES.secondInstruction);
+        track = this.specifyAudioTrackFS(AUDIO_CASES.secondInstruction);
 
         break;
       case 2:
-        track = this.specifyAudioTrackFS(AUIDO_CASES.thirdInstruction);
+        track = this.specifyAudioTrackFS(AUDIO_CASES.thirdInstruction);
 
         break;
       case 3:
-        track = this.specifyAudioTrackFS(AUIDO_CASES.fourthInstruction);
+        track = this.specifyAudioTrackFS(AUDIO_CASES.fourthInstruction);
 
         break;
       default:
@@ -1104,7 +1105,7 @@ class Camera extends Component {
     }
 
     this.setState({
-      activeAudioTrack: this.specifyAudioTrack(AUIDO_CASES.finallySuccess),
+      activeAudioTrack: this.specifyAudioTrack(AUDIO_CASES.finallySuccess),
     });
 
     current.load();
