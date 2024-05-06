@@ -6,7 +6,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const cssnano = require('cssnano');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
-const RenameOutputPlugin = require('rename-output-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -34,10 +33,6 @@ const sass = {
 
 const css = {
   loader: 'css-loader',
-};
-
-const style = {
-  loader: 'style-loader',
 };
 
 const postcss = {
@@ -177,7 +172,7 @@ module.exports = {
       },
 
       {
-          test: /\.(jpe?g|png|gif|svg|ogg|mp3|mp4)/,
+        test: /\.(jpe?g|png|gif|svg|ogg|mp3|mp4)/,
         use: [
           {
             loader: 'file-loader',
@@ -214,7 +209,7 @@ module.exports = {
       react: 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
       'react-dom': 'preact/compat',
-      "react/jsx-runtime": "preact/jsx-runtime"
+      'react/jsx-runtime': 'preact/jsx-runtime',
     },
   },
   optimization: {
