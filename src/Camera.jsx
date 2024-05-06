@@ -1,11 +1,9 @@
 import {
-  // eslint-disable-next-line no-unused-vars
-  h,
   render,
-  Component,
   createRef,
   Fragment,
 } from 'preact';
+import { PureComponent } from 'preact/compat';
 import classNames from 'classnames';
 
 import AllowFrame from './components/AllowFrame/AllowFrame';
@@ -136,7 +134,7 @@ const AUDIO_CASES = {
   ],
 };
 
-class Camera extends Component {
+class Camera extends PureComponent {
     $audio = createRef();
     $testAudio = createRef();
     $videoGuide = createRef();
@@ -303,7 +301,7 @@ class Camera extends Component {
       this.video.srcObject = this.stream;
 
       if (callback) {
-        callback().catch((err) => console.err(err));
+        callback().catch((err) => console.error(err));
       }
     } catch (error) {
       if (this.is('Android')) {
@@ -358,7 +356,7 @@ class Camera extends Component {
     .then(async (devices) => {
       const devicesArr = [];
 
-      devices.forEach((e, i) => {
+      devices.forEach((e) => {
         if (e.kind === 'videoinput' && e.label.includes('back')) {
           devicesArr.push(e.deviceId);
         }
@@ -516,7 +514,7 @@ class Camera extends Component {
     try {
       let image;
 
-      // for chrome >= 81 we dont need to use fixOrientation
+      // for chrome >= 81 we don't need to use fixOrientation
       if (this.is('Android') && getChromeVersion() >= 81) {
         image = await imgToBase64(blob);
       } else {
@@ -551,7 +549,7 @@ class Camera extends Component {
     try {
       let image;
 
-      // for chrome >= 81 we dont need to use fixOrientation
+      // for chrome >= 81 we don't need to use fixOrientation
       if (this.is('Android') && getChromeVersion() >= 81) {
         image = await imgToBase64(blob);
       } else {
@@ -619,13 +617,13 @@ class Camera extends Component {
     return track;
   }
 
-  retryPhoto = () => {
-    const { imgURI } = this.state;
-
-    if (imgURI) {
-      this.setState({ imgURI: null, processing: false }, this.startStream);
-    }
-  }
+  // retryPhoto = () => {
+  //   const { imgURI } = this.state;
+  //
+  //   if (imgURI) {
+  //     this.setState({ imgURI: null, processing: false }, this.startStream);
+  //   }
+  // }
 
   before(component) {
     const { imgURI, processing } = this.state;
@@ -638,15 +636,15 @@ class Camera extends Component {
     return component;
   }
 
-  after = (component) => {
-    const { imgURI, processing } = this.state;
-
-    if (!imgURI || processing) {
-      return;
-    }
-
-    return component;
-  };
+  // after = (component) => {
+  //   const { imgURI, processing } = this.state;
+  //
+  //   if (!imgURI || processing) {
+  //     return;
+  //   }
+  //
+  //   return component;
+  // };
 
   processing = (component) => {
     const { processing } = this.state;
@@ -1238,8 +1236,6 @@ class Camera extends Component {
           <div className="widget-camera__video-wrapper">
             <video
               crossOrigin="anonymous"
-              controls={false}
-              controlsList={false}
               muted
               ref={(ref) => this.video = ref}
               playsinline
