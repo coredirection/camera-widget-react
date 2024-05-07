@@ -1,4 +1,6 @@
 import {
+  // eslint-disable-next-line no-unused-vars
+  h,
   render,
   createRef,
   Fragment,
