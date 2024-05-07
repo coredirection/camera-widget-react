@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/3dlook-me/camera-widget-react/compare/v1.1.0...v1.1.1) (2024-05-07)
+
+
+### Bug Fixes
+
+* **KDL-1185:** revert h for preact ([a75b813](https://github.com/3dlook-me/camera-widget-react/commit/a75b8137d677bba65b80c1698becc95cb5f37db4))
+
 # [1.1.0](https://github.com/3dlook-me/camera-widget-react/compare/v1.0.0...v1.1.0) (2024-05-06)
 
 
