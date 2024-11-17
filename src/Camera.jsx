@@ -1137,7 +1137,7 @@ class Camera extends PureComponent {
       ...(alpha && { alphaZ: alpha }),
     };
 
-    setDeviceCoordinates(coordinates);
+   // setDeviceCoordinates(coordinates);
   }
 
   render() {
